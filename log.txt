@@ -1,0 +1,90 @@
+[?2004h]0;nithish@nithish-HP-Notebook: ~/Documents/friends[01;32mnithish@nithish-HP-Notebook[00m:[01;34m~/Documents/friends[00m$ railss[K s
+[?2004l=> Booting Puma
+=> Rails 7.0.2.3 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+Puma starting in single mode...
+* Puma version: 5.6.2 (ruby 2.7.4-p191) ("Birdie's Version")
+*  Min threads: 5
+*  Max threads: 5
+*  Environment: development
+*          PID: 10974
+* Listening on http://127.0.0.1:3000
+* Listening on http://[::1]:3000
+Use Ctrl-C to stop
+Started GET "/friends" for 127.0.0.1 at 2022-04-13 00:17:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (63.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FriendsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (67.7ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  ↳ app/views/friends/index.html.erb:24
+  Rendered friends/index.html.erb within layouts/application (Duration: 227.3ms | Allocations: 8941)
+  Rendered home/_header.html.erb (Duration: 5.8ms | Allocations: 551)
+  Rendered layout layouts/application.html.erb (Duration: 638.1ms | Allocations: 43254)
+Completed 200 OK in 748ms (Views: 541.6ms | ActiveRecord: 125.3ms | Allocations: 48289)
+
+
+Started GET "/friends" for 127.0.0.1 at 2022-04-13 00:17:20 +0530
+Processing by FriendsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering friends/index.html.erb within layouts/application
+  [1m[36mFriend Load (0.4ms)[0m  [1m[34mSELECT "friends".* FROM "friends"[0m
+  ↳ app/views/friends/index.html.erb:24
+  Rendered friends/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2149)
+  Rendered home/_header.html.erb (Duration: 0.9ms | Allocations: 191)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4452)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.4ms | Allocations: 4730)
+
+
+Started GET "/friends/new" for 127.0.0.1 at 2022-04-13 00:17:21 +0530
+Processing by FriendsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering friends/new.html.erb within layouts/application
+  Rendered friends/_form.html.erb (Duration: 115.7ms | Allocations: 3214)
+  Rendered friends/new.html.erb within layouts/application (Duration: 151.5ms | Allocations: 3515)
+  Rendered home/_header.html.erb (Duration: 0.4ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 154.6ms | Allocations: 5821)
+Completed 200 OK in 157ms (Views: 155.4ms | ActiveRecord: 0.0ms | Allocations: 6163)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-13 00:17:23 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 13.3ms | Allocations: 239)
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 647)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 130.3ms | Allocations: 3657)
+  Rendered home/_header.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 134.0ms | Allocations: 5985)
+Completed 200 OK in 160ms (Views: 136.4ms | ActiveRecord: 3.8ms | Allocations: 11186)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-13 00:17:26 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 368)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 62.9ms | Allocations: 2048)
+  Rendered home/_header.html.erb (Duration: 0.3ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 4349)
+Completed 200 OK in 82ms (Views: 68.0ms | ActiveRecord: 0.0ms | Allocations: 5863)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-04-13 00:17:35 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (75.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test1@g.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 164ms (ActiveRecord: 75.6ms | Allocations: 3120)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test1@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 988)
+  Rendered home/_header.html.erb (Duration: 0.4ms | Allocations: 190)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3259)
+Completed 200 OK in 454ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4686)
+
+

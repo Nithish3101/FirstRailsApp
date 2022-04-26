@@ -1,0 +1,30 @@
+<div class="card text-center" id="<%= dom_id friend %>">
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <%= link_to "Edit",edit_friend_path(friend),class:"nav-link active"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Back", friends_path, class:"nav-link"%>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><strong>Card</strong></h5><br/>
+    <p class="card-text"><strong>First name:</strong>
+    <%= friend.first_name %></p>
+    <p class="card-text"><strong>Last name:</strong>
+    <%= friend.last_name %></p>
+    <p class="card-text"><strong>Email:</strong>
+    <%= friend.email %></p>
+    <p class="card-text"><strong>Phone:</strong>
+    <%= friend.phone %></p>
+    <p class="card-text"><strong>Twitter:</strong>
+    <%= friend.twitter %></p>
+    <%= button_to "Destroy this friend", @friend, method: :delete, class:"btn btn-danger"%>
+  </div>
+</div>
+
